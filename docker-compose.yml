@@ -16,11 +16,8 @@ configs:
 services:
   icecast:
     container_name: icecast
-    image: debian:bookworm-slim
     build: icecast
     restart: unless-stopped
-    ports:
-      - "8000:8000"
     configs:
       - source: icecast_xml
         target: /etc/icecast2/icecast.xml
